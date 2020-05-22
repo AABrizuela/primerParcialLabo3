@@ -28,7 +28,6 @@ function callback() {
             
                 elementoTr.addEventListener('dblclick',abrir);
                 tbodyObject.appendChild(elementoTr);
-                elementoTr.appendChild(generateTd(materia.id));
                 elementoTr.appendChild(generateTd(materia.nombre));
                 elementoTr.appendChild(generateTd(materia.cuatrimestre));
                 elementoTr.appendChild(generateTd(materia.fechaFinal));
