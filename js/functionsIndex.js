@@ -205,13 +205,6 @@ function validDate( date ){
     currentMonth = new Date().getMonth();
     currentDay = new Date().getDate();
 
-    console.log(test[0]);
-    console.log(test[1]);
-    console.log(test[2]);
-    console.log(currentDate);
-    console.log(currentMonth);
-    console.log(currentDay);
-
     if((test[0] > currentDate+1 || test[0]< currentDate) || (test[1] > currentMonth+1 || test[1] < currentMonth+1) || (test[2] > currentDay+1 || test[2] < currentDay+1))
     {
         return false;
