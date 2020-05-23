@@ -28,6 +28,7 @@ function callback() {
             
                 elementoTr.addEventListener('dblclick',abrir);
                 tbodyObject.appendChild(elementoTr);
+                elementoTr.appendChild(generateTd(materia.id));
                 elementoTr.appendChild(generateTd(materia.nombre));
                 elementoTr.appendChild(generateTd(materia.cuatrimestre));
                 elementoTr.appendChild(generateTd(materia.fechaFinal));
@@ -199,18 +200,13 @@ function interactGif(status){
 }
 
 function validDate( date ){
+    var dateAux = new Date();
     var test = date.split('-');
+    dateAux.setFullYear(test[0], test[1]-1, test[2]);
+    var today = new Date();
 
-    currentDate = new Date().getFullYear();
-    currentMonth = new Date().getMonth();
-    currentDay = new Date().getDate();
-
-    if((test[0] > currentDate+1 || test[0]< currentDate) || (test[1] > currentMonth+1 || test[1] < currentMonth+1) || (test[2] > currentDay+1 || test[2] < currentDay+1))
-    {
+    if(dateAux <= today)
         return false;
-    }        
-    else 
-    {
-        return true;
-    }    
+    else
+        return true;    
 }
